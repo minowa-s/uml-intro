@@ -1,0 +1,12 @@
+@startuml ユースケース図
+left to right direction
+actor 田中#DDDDDD;line:black;line.bold;
+actor 鈴木#DDDDDD;line:black;line.bold;
+    rectangle 販売管理システム{
+        usecase 注文商品確認 
+        usecase 出荷状況登録 
+
+    }
+    田中 -->注文商品確認
+    鈴木 -->出荷状況登録
+    @enduml

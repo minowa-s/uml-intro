@@ -1,0 +1,8 @@
+@startuml ユースケース図
+    rectangle キャンペーン中のホテル宿泊予約{
+        usecase 予約する
+        usecase (<u>キャンペーン価格で予約する</u>\n拡張点\nキャンペーン期間) as input
+
+    }
+    input <.(予約する) : <<extend>>
+    @enduml
