@@ -7,7 +7,7 @@ actor 利用者
         usecase キャンペーン価格にする
     }
      
-    (キャンペーン価格にする) .>input : <<extend>>
+    (キャンペーン価格にする) .>input :<<extend>>
     利用者  --> input
     input .> ログインする : << include >>
    
