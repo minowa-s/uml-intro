@@ -1,9 +1,7 @@
 @startuml ユースケース図
     ' left to righit direction
-    rectangle ホテル{
-        usecase ホテル従業員
-        usecase 経営者
-       
-    }
+    actor 経営者 #DDDDDD;line:black;line.bold;
+actor ホテル従業員#DDDDDD;line:black;line.bold;
+
      ホテル従業員 <|-- 経営者
      @enduml

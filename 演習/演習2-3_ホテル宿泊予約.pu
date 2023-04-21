@@ -1,7 +1,9 @@
 @startuml ユースケース図
+actor 利用者
 rectangle ホテル宿泊予約{
     usecase ホテルを予約する
     usecase ログインする
 }
-ホテルを予約する <. ログインする : << include >>
+利用者 --> ホテルを予約する
+ホテルを予約する .> ログインする : << include >>
 @enduml
