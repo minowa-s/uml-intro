@@ -1,0 +1,35 @@
+@startuml 演習3-7
+skinparam classAttributeIconSize 0
+class 顧客 {
+  - 名前
+}
+
+class 注文 {
+  - 注文日
+  - 商品
+}
+
+class 商品 {
+  - 型式番号
+}
+
+class 高橋洋平さん {
+  - 注文
+}
+
+class 高田利恵さん {
+  - 注文
+}
+
+class 大坪直之さん {
+  + 商品を見る
+}
+
+顧客 "1" -- "*" 注文
+注文 "1" -- "1" 商品
+高橋洋平さん --> 注文
+高田利恵さん --> 注文
+大坪直之さん --> 商品を見る
+
+hide circle
+@enduml
