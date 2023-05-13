@@ -1,17 +1,19 @@
 @startuml 演習4-3
-actor User
 hide footbox
  'メッセージに自動で番号を降る
  autonumber
  ' 厳密なUMLに準拠する
 skinparam style strictuml
-User -> controller: データ更新
-activate controller
-controller -> hotel: ホテル予約
-activate hotel
-hotel -> hotel: 予約登録
-deactivate hotel
-controller <-- hotel: 予約確認
-deactivate controller
 
+participant "<u>:controller" as ct
+participant "<u>:hotel" as ht
+activate ct
+    ct -> ht:予約操作()
+activate ht
+    create "<u>:予約" as yo
+    ht -->> yo :<<create>>
+    ht -> ht:予約登録()
+    activate ht
+deactivate ct
+deactivate ht
 @enduml
