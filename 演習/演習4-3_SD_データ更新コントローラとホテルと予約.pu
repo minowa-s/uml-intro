@@ -1,0 +1,17 @@
+@startuml 演習4-3
+actor User
+hide footbox
+ 'メッセージに自動で番号を降る
+ autonumber
+ ' 厳密なUMLに準拠する
+skinparam style strictuml
+User -> controller: データ更新
+activate controller
+controller -> hotel: ホテル予約
+activate hotel
+hotel -> hotel: 予約登録
+deactivate hotel
+controller <-- hotel: 予約確認
+deactivate controller
+
+@enduml
