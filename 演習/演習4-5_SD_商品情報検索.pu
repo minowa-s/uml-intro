@@ -1,22 +1,31 @@
 @startuml 演習4-5
- 'メッセージに自動で番号を降る
- autonumber
- ' 厳密なUMLに準拠する
 skinparam style strictuml
-actor 会員
-participant 商品検索画面
-participant 商品データベース
 
-会員 -> 商品検索画面: 商品検索リクエスト
-activate 商品検索画面
+actor ":会員" as user
+participant ":商品検索画面" as screen
+participant ":商品コントローラ" as control
+participant ":商品" as entity
 
-商品検索画面 -> 商品データベース: 商品検索（カテゴリ）
-activate 商品データベース
+activate user
+user -> screen : 商品検索(商品番号)
+activate screen
+screen -> control : 商品検索(商品番号)
+activate control
+create entity
+control -->> entity :<<entity>>生成()
 
-商品データベース --> 商品検索画面: 商品検索結果
-deactivate 商品データベース
+loop 商品のカテゴリ数
+create ":商品カテゴリ" as category
+control -->> category : <<entity>>生成()
+control -> entity : 商品カテゴリ設定()
+activate entity
+deactivate entity
 
-商品検索画面 -> 会員: 商品検索結果表示
-deactivate 商品検索画面
+end loop
 
+screen <<-- control : 商品情報
+screen  -> screen : 商品情報表示(商品情報)
+activate screen
+
+deactivate 
 @enduml
