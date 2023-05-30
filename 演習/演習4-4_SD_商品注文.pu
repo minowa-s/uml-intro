@@ -8,7 +8,7 @@ skinparam style strictuml
 participant "注文登録画面" as 登録画面
 participant "商品情報" as 商品情報
 participant "注文情報" as 注文情報
-entity 商品
+participant 商品
 participant "注文" as 注文
 
 受注係 -> 登録画面: 商品情報確認()
