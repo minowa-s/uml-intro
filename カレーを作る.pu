@@ -1,0 +1,22 @@
+@startuml カレー
+title カレー作り
+start
+:材料を準備する;
+:お米を研ぐ;
+:お米を炊く;
+fork
+:野菜,肉を切る;
+:鍋に入れて煮込む;
+:カレール―を入れる;
+:再度煮込む;
+note right
+よく煮込む
+end note
+fork again
+:米が炊き上がるのを待つ;
+end fork
+:盛り付ける;
+:完成;
+stop
+
+@enduml
